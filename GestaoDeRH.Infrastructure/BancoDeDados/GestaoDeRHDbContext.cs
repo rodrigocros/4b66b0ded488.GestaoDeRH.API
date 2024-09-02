@@ -1,4 +1,5 @@
 ﻿using GestaoDeRH.Dominio.ControlePonto;
+using GestaoDeRH.Dominio.FeriasColaborador;
 using GestaoDeRH.Dominio.FolhaDePagamento;
 using GestaoDeRH.Dominio.Notificacao;
 using GestaoDeRH.Dominio.Pessoas;
@@ -11,6 +12,7 @@ namespace GestaoDeRH.Infra.BancoDeDados
 {
     public class GestaoDeRhDbContext(DbContextOptions<GestaoDeRhDbContext> options) : DbContext(options)
     {
+        public DbSet<FeriasColaborador> Ferias { get; set; }
         public DbSet<Ponto> Pontos { get; set; }
         public DbSet<Holerite> Holerites { get; set; }
         public DbSet<Colaborador> Colaboradores { get; set; }

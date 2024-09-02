@@ -3,6 +3,7 @@ using System;
 using GestaoDeRH.Infra.BancoDeDados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestaoDeRH.Infra.Migrations
 {
     [DbContext(typeof(GestaoDeRhDbContext))]
-    partial class GestaoDeRhDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240901182559_aquiOquefoiAdicionado")]
+    partial class aquiOquefoiAdicionado
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,29 +41,6 @@ namespace GestaoDeRH.Infra.Migrations
                     b.HasIndex("ColaboradorId");
 
                     b.ToTable("Pontos");
-                });
-
-            modelBuilder.Entity("GestaoDeRH.Dominio.FeriasColaborador.FeriasColaborador", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ColaboradorId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("DataFimFerias")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("DataInicioFerias")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("DataUltimaSolicitacao")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Ferias");
                 });
 
             modelBuilder.Entity("GestaoDeRH.Dominio.FolhaDePagamento.Holerite", b =>

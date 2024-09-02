@@ -3,6 +3,7 @@ using System;
 using GestaoDeRH.Infra.BancoDeDados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestaoDeRH.Infra.Migrations
 {
     [DbContext(typeof(GestaoDeRhDbContext))]
-    partial class GestaoDeRhDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240901222005_addFerias2")]
+    partial class addFerias2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,7 +43,7 @@ namespace GestaoDeRH.Infra.Migrations
                     b.ToTable("Pontos");
                 });
 
-            modelBuilder.Entity("GestaoDeRH.Dominio.FeriasColaborador.FeriasColaborador", b =>
+            modelBuilder.Entity("GestaoDeRH.Dominio.Ferias.Ferias", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

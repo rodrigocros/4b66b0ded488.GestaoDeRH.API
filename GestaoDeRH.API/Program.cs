@@ -1,5 +1,7 @@
 using GestaoDeRH.Aplicacao.ControlePonto;
 using GestaoDeRH.Aplicacao.ControlePonto.Interfaces;
+using GestaoDeRH.Aplicacao.Ferias;
+using GestaoDeRH.Aplicacao.Ferias.Interfaces;
 using GestaoDeRH.Aplicacao.FolhaDePagamento;
 using GestaoDeRH.Aplicacao.FolhaDePagamento.Interfaces;
 using GestaoDeRH.Aplicacao.Notificacoes;
@@ -31,6 +33,7 @@ builder.Services.AddScoped<IFecharFolhaDePagamento, FecharFolhaDePagamento>();
 
 builder.Services.AddScoped<INotificarColaborador, NotificarColaborador>();
 
+builder.Services.AddScoped<ISolicitarFerias, SolicitarFerias>();
 builder.Services.AddScoped<ICriarVaga, CriarVaga>();
 builder.Services.AddScoped<INovoCandidato, NovoCandidato>();
 builder.Services.AddScoped<IAprovarCandidato, AprovarCandidato>();
