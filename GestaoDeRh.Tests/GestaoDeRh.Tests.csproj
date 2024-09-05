@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GestaoDeRH.Aplicacao\GestaoDeRH.Aplicacao.csproj" />
     <ProjectReference Include="..\GestaoDeRH.Domain\GestaoDeRH.Dominio.csproj" />
   </ItemGroup>
 
